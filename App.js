@@ -1,0 +1,21 @@
+const parent = React.createElement(
+  "div",
+  { id: "parent" },
+  React.createElement("div", { id: "child" }, [
+    React.createElement("h1", {}, "I'm an h2 tag"),
+    React.createElement("h2", {}, "I'm an h2 tag"),
+  ])
+);
+
+const heading = React.createElement(
+  "h1",
+  {
+    id: "headingEle",
+    type: "h1",
+  },
+  "Hello world from javascript!"
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(parent);
