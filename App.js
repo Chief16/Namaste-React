@@ -1,32 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", { id: "child1" }, [
-      React.createElement("h2", { id: "child1_1" }, "I'm an h2 tag"),
-      React.createElement("h2", { id: "child1_2" }, "I'm an h2 tag"),
-    ]),
-    React.createElement("h2", { id: "child2" }, [
-      React.createElement("h1", { id: "child2_0" }, [
-        React.createElement("h2", { id: "child2_1" }, "I'm an h2 tag"),
-        React.createElement("h2", { id: "child2_2" }, "I'm an h2 tag"),
-      ]),
-    ])
-  ])
-);
 
-const heading = React.createElement(
-  "h1",
-  {
-    id: "headingEle",
-    type: "h1",
-  },
-  "Hello world from javascript!"
-);
+//React Element
+const TitleComponent = () => (
+  <h1 id="heading" className="headingClass">Namaste React 🚀</h1>
+)
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const title = React.createElement("h1", {}, "Akash is here!")
 
-root.render(parent);
+
+//Functional Component
+const HeadingComponent = () => (
+  <div>
+    {/* <TitleComponent></TitleComponent> Adding another component in a component is called component composition */}
+    {title}
+    <h1>Printing from h1 functional component</h1>
+  </div>
+)
+
+//Creating root
+const root = ReactDOM.createRoot(document.getElementById("root"))
+
+root.render(<HeadingComponent/>);
